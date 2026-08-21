@@ -1,0 +1,184 @@
+@import "tailwindcss/preflight";
+@import "tailwindcss/theme";
+@import "tailwindcss/utilities";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Mukta:wght@400;500;600;700;800&display=swap");
+
+html,
+body,
+#root {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+@theme {
+	--color-themeyellow: #f5e60d;
+	--color-themepurple: #502ec3;
+	--color-themecream: #faf5e9;
+	--color-themelight: #fffdf8;
+	--color-themedarkbrown: #3b2418;
+	--color-themebrown: #7a4e28;
+	--color-themegold: #d4a017;
+	--color-themegoldhover: #b8860b;
+	--color-themelightgold: #f4e2a0;
+	--color-themegray: #6f6257;
+	--color-themelightgray: #9a8e84;
+	--color-themeborder: #b78a5a;
+	--color-themeorange: #d9781a;
+}
+#icons{
+	display: none;
+}
+#product-box:hover{
+	#icons{
+		display: flex !important;
+	}
+}
+
+.font-poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+.font-hindi {
+  font-family: "Mukta", sans-serif;
+  
+}
+/* ===================== */
+/* PRODUCT MARQUEE */
+/* ===================== */
+
+.marquee-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 24px;
+}
+
+.marquee-left {
+  animation: marqueeLeft 60s linear infinite;
+}
+
+.marquee-right {
+  animation: marqueeRight 60s linear infinite;
+}
+
+@keyframes marqueeLeft {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marqueeRight {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.marquee-track img {
+  user-select: none;
+  pointer-events: none;
+}
+
+@media (max-width:768px){
+
+.marquee-left{
+animation-duration:40s;
+}
+
+.marquee-right{
+animation-duration:40s;
+}
+
+}
+
+.marquee-area:hover .marquee-track{
+    filter: blur(3px);
+    transform: scale(0.98);
+    transition: .4s;
+}
+
+.marquee-area:hover .overlay{
+    opacity:1;
+}
+.marquee-track.paused {
+  animation-play-state: paused;
+}
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 12s linear infinite;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+@keyframes product-gallery-left {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(
+      calc(-1 * var(--gallery-distance)),
+      0,
+      0
+    );
+  }
+}
+
+@keyframes product-gallery-right {
+  from {
+    transform: translate3d(
+      calc(-1 * var(--gallery-distance)),
+      0,
+      0
+    );
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.product-gallery-track {
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-gallery-track {
+    animation: none !important;
+    transform: translate3d(0, 0, 0);
+  }
+}
