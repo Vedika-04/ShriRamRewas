@@ -40,7 +40,7 @@ const CallToAction = () => {
         <div className="flex flex-col lg:items-end gap-5">
 
           <a
-            href="tel:+9198274XXXXX"
+            href="tel:+919131825546"
             className="bg-[#FFD27D] hover:bg-white text-themebrown font-semibold px-8 py-4 rounded-xl w-full lg:w-80 flex justify-center items-center gap-3 duration-300"
           >
             <FaPhoneAlt />
