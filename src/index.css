@@ -9,7 +9,29 @@ body,
   width: 100%;
   overflow-x: hidden;
 }
+/* Prevent browser/device dark mode from changing website colors */
 
+:root {
+  color-scheme: light;
+}
+
+html {
+  color-scheme: light;
+  background-color: #F8F6F2;
+}
+
+body {
+  background-color: #F8F6F2;
+  color: #302017;
+}
+
+/* Keep form elements in light mode */
+input,
+textarea,
+select,
+button {
+  color-scheme: light;
+}
 *,
 *::before,
 *::after {
