@@ -8,12 +8,20 @@ import {
   FaEnvelope,
   FaArrowRight,
 } from "react-icons/fa";
+
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import qr from "../assets/image.png";
+import qr from "../assets/qr.png";
+
+import { useLanguage } from "../context/LanguageContext";
+import { socialTranslations } from "../translations/social";
 
 const Socialmedia = () => {
+  const { language } = useLanguage();
+
+  const t = socialTranslations[language];
+
   useEffect(() => {
     AOS.init({
       offset: 100,
@@ -28,14 +36,16 @@ const Socialmedia = () => {
       id="contact"
       className="w-full bg-gradient-to-b from-[#FFFDF8] via-[#F8F6F2] to-[#F3EEE5] py-20 lg:px-20 px-5"
     >
-      {/* Heading */}
+      {/* =========================
+          HEADING
+      ========================= */}
 
       <div className="text-center mb-14">
         <h3
           data-aos="fade-up"
           className="text-themebrown text-2xl font-semibold"
         >
-          Stay Connected
+          {t.stayConnected}
         </h3>
 
         <h1
@@ -43,7 +53,7 @@ const Socialmedia = () => {
           data-aos-delay="100"
           className="text-themedarkbrown font-bold lg:text-5xl text-4xl mt-3"
         >
-          Connect With Us
+          {t.connectWithUs}
         </h1>
 
         <p
@@ -51,8 +61,7 @@ const Socialmedia = () => {
           data-aos-delay="200"
           className="max-w-3xl mx-auto mt-5 text-lg text-gray-600 leading-8"
         >
-          Follow us for the latest agricultural products, manufacturing
-          updates and farming solutions.
+          {t.description}
         </p>
       </div>
 
@@ -65,9 +74,9 @@ const Socialmedia = () => {
           className="rounded-3xl overflow-hidden shadow-xl border border-[#E6D8C6]"
         >
           <iframe
-            title="Factory Location"
+            title={t.factoryLocation}
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.12182854945!2d75.18977869999999!3d23.564067599999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39640f061cfd87a1%3A0xd17d6c686674edd7!2sShri%20Ram%20Welding%20Works%20Rewas!5e0!3m2!1sen!2sin!4v1785622965182!5m2!1sen!2sin"
-            referrerpolicy="strict-origin-when-cross-origin"
+            referrerPolicy="strict-origin-when-cross-origin"
             width="100%"
             height="380"
             loading="lazy"
@@ -83,10 +92,9 @@ const Socialmedia = () => {
           className="bg-white rounded-b-3xl border border-t-0 border-[#E6D8C6] shadow-xl grid lg:grid-cols-3 gap-10 p-10"
         >
 
-          {/* ADDRESS */}
+          {/* ================= ADDRESS ================= */}
 
           <div>
-
             <div className="flex items-start gap-4">
 
               <div className="w-14 h-14 rounded-full bg-themebrown text-white flex items-center justify-center">
@@ -94,7 +102,6 @@ const Socialmedia = () => {
               </div>
 
               <div>
-
                 <h2 className="text-2xl font-bold text-themebrown">
                   Shri Ram Welding Works
                 </h2>
@@ -104,7 +111,6 @@ const Socialmedia = () => {
                   <br />
                   District Ratlam (M.P.)
                 </p>
-
               </div>
 
             </div>
@@ -113,12 +119,18 @@ const Socialmedia = () => {
 
               <div className="flex items-center gap-3 text-gray-700">
                 <FaPhoneAlt className="text-themebrown" />
-                +91 XXXXX XXXXX
+                +91 91318 25546
               </div>
 
               <div className="flex items-center gap-3 text-gray-700">
                 <FaEnvelope className="text-themebrown" />
-                your@email.com
+
+                <a
+                  href="mailto:shriramrewas@gmail.com"
+                  className="hover:text-themebrown transition"
+                >
+                  shriramrewas@gmail.com
+                </a>
               </div>
 
             </div>
@@ -129,14 +141,12 @@ const Socialmedia = () => {
               rel="noreferrer"
               className="inline-flex items-center gap-3 mt-8 bg-themebrown hover:bg-themegold hover:text-black text-white px-8 py-3 rounded-full font-semibold transition-all duration-300"
             >
-              Get Directions
-
+              {t.getDirections}
               <FaArrowRight />
             </a>
-
           </div>
 
-          {/* QR */}
+          {/* ================= QR ================= */}
 
           <div className="flex flex-col items-center justify-center border-y lg:border-y-0 lg:border-x border-[#EFE2CF] py-6">
 
@@ -147,21 +157,21 @@ const Socialmedia = () => {
             />
 
             <h3 className="mt-5 text-lg font-semibold text-themebrown">
-              Scan to Visit Factory
+              {t.scanFactory}
             </h3>
 
             <p className="text-gray-500 mt-2 text-center">
-              Open Google Maps instantly
+              {t.openMaps}
             </p>
 
           </div>
 
-          {/* SOCIAL */}
+          {/* ================= SOCIAL ================= */}
 
           <div>
 
             <h2 className="text-2xl font-bold text-themebrown mb-7">
-              Follow Us
+              {t.followUs}
             </h2>
 
             <div className="flex gap-5">
@@ -176,7 +186,7 @@ const Socialmedia = () => {
               </a>
 
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/shriram_rewas?igsi=anJueDJodGJlcmI2"
                 target="_blank"
                 rel="noreferrer"
                 className="w-16 h-16 rounded-full bg-[#F8F4EC] hover:bg-themebrown hover:text-white text-themebrown shadow-md flex items-center justify-center text-2xl transition-all duration-300 hover:scale-110"
@@ -185,7 +195,7 @@ const Socialmedia = () => {
               </a>
 
               <a
-                href="https://youtube.com"
+                href="https://www.youtube.com/@ShriRamRewas"
                 target="_blank"
                 rel="noreferrer"
                 className="w-16 h-16 rounded-full bg-[#F8F4EC] hover:bg-themebrown hover:text-white text-themebrown shadow-md flex items-center justify-center text-2xl transition-all duration-300 hover:scale-110"
@@ -198,15 +208,15 @@ const Socialmedia = () => {
             <div className="mt-8 space-y-4 text-gray-600">
 
               <p>
-                Follow us for latest agricultural products.
+                {t.latestProducts}
               </p>
 
               <p>
-                Watch manufacturing and machine demos.
+                {t.machineDemos}
               </p>
 
               <p>
-                Stay updated with new launches.
+                {t.newLaunches}
               </p>
 
             </div>

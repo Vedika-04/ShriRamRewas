@@ -5,7 +5,7 @@ import ReactCurvedText from "react-curved-text";
 const FloatingContact = () => {
   const [open, setOpen] = useState(false);
 
-  const phone = "919876543210"; // Replace with your number
+  const phone = "9131825546"; // Replace with your number
 
   const whatsapp = `https://wa.me/${phone}`;
   const call = `tel:+${phone}`;

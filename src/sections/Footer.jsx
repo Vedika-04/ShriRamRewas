@@ -9,30 +9,39 @@ import {
   FaClock,
 } from "react-icons/fa";
 
+import { useLanguage } from "../context/LanguageContext";
+import { footerTranslations } from "../translations/footer";
+
 const Footer = () => {
+  const { language } = useLanguage();
+
+  const t = footerTranslations[language];
+
   return (
     <footer className="w-full bg-[#85542B] text-white">
 
-      {/* Main Footer */}
+      {/* =========================
+          MAIN FOOTER
+      ========================= */}
 
       <div className="w-full mx-auto lg:px-8 px-5 py-10">
 
         <div className="grid lg:grid-cols-[1.4fr_0.9fr_1fr_1.1fr] md:grid-cols-2 grid-cols-1 lg:gap-20 gap-10">
 
-          {/* About */}
+          {/* =========================
+              ABOUT
+          ========================= */}
 
           <div>
 
             <h2 className="text-[32px] font-semibold underline text-[#FFD77A] leading-tight">
               Shri Ram
+              <br />
               Welding Works
             </h2>
 
             <p className="mt-5 text-[16px] leading-7 text-[#F7EFE5] max-w-[320px]">
-              Manufacturers of premium agricultural implements including
-              cultivators, seed drills, agricultural sprayers, tractor
-              trolleys and water tankers with trusted quality and
-              durability.
+              {t.description}
             </p>
 
             {/* Social */}
@@ -47,14 +56,18 @@ const Footer = () => {
               </a>
 
               <a
-                href="#"
+                href="https://www.instagram.com/shriram_rewas?igsi=anJueDJodGJlcmI2"
+                target="_blank"
+                rel="noreferrer"
                 className="w-9 h-9 rounded-full bg-[#F6E8D4] text-[#85542B] hover:bg-[#FFD77A] hover:scale-110 transition-all duration-300 flex items-center justify-center"
               >
                 <FaInstagram />
               </a>
 
               <a
-                href="#"
+                href="https://www.youtube.com/@ShriRamRewas"
+                target="_blank"
+                rel="noreferrer"
                 className="w-9 h-9 rounded-full bg-[#F6E8D4] text-[#85542B] hover:bg-[#FFD77A] hover:scale-110 transition-all duration-300 flex items-center justify-center"
               >
                 <FaYoutube />
@@ -71,12 +84,14 @@ const Footer = () => {
 
           </div>
 
-          {/* Quick Links */}
+          {/* =========================
+              QUICK LINKS
+          ========================= */}
 
           <div>
 
             <h3 className="text-xl font-semibold text-[#FFD77A] mb-5">
-              Quick Links
+              {t.quickLinks}
             </h3>
 
             <ul className="space-y-3 text-[14px] text-[#F7EFE5]">
@@ -86,7 +101,7 @@ const Footer = () => {
                   href="#home"
                   className="hover:text-[#FFD77A] hover:translate-x-1 transition-all duration-300 inline-block"
                 >
-                  Home
+                  {t.home}
                 </a>
               </li>
 
@@ -95,7 +110,7 @@ const Footer = () => {
                   href="#about"
                   className="hover:text-[#FFD77A] hover:translate-x-1 transition-all duration-300 inline-block"
                 >
-                  About Us
+                  {t.aboutUs}
                 </a>
               </li>
 
@@ -104,7 +119,7 @@ const Footer = () => {
                   href="#products"
                   className="hover:text-[#FFD77A] hover:translate-x-1 transition-all duration-300 inline-block"
                 >
-                  Products
+                  {t.products}
                 </a>
               </li>
 
@@ -113,7 +128,7 @@ const Footer = () => {
                   href="#category"
                   className="hover:text-[#FFD77A] hover:translate-x-1 transition-all duration-300 inline-block"
                 >
-                  Categories
+                  {t.categories}
                 </a>
               </li>
 
@@ -122,7 +137,7 @@ const Footer = () => {
                   href="#contact"
                   className="hover:text-[#FFD77A] hover:translate-x-1 transition-all duration-300 inline-block"
                 >
-                  Contact Us
+                  {t.contactUs}
                 </a>
               </li>
 
@@ -130,46 +145,50 @@ const Footer = () => {
 
           </div>
 
-          {/* Products */}
+          {/* =========================
+              PRODUCTS
+          ========================= */}
 
           <div>
 
             <h3 className="text-xl font-semibold text-[#FFD77A] mb-5">
-              Our Products
+              {t.ourProducts}
             </h3>
 
             <ul className="space-y-3 text-[14px] text-[#F7EFE5]">
 
               <li className="hover:text-[#FFD77A] cursor-pointer transition">
-                Cultivators
+                {t.cultivators}
               </li>
 
               <li className="hover:text-[#FFD77A] cursor-pointer transition">
-                Seed Drills
+                {t.seedDrills}
               </li>
 
               <li className="hover:text-[#FFD77A] cursor-pointer transition">
-                Agricultural Sprayers
+                {t.agriculturalSprayers}
               </li>
 
               <li className="hover:text-[#FFD77A] cursor-pointer transition">
-                Tractor Trolleys
+                {t.tractorTrolleys}
               </li>
 
               <li className="hover:text-[#FFD77A] cursor-pointer transition">
-                Water Tankers
+                {t.waterTankers}
               </li>
 
             </ul>
 
           </div>
 
-          {/* Contact */}
+          {/* =========================
+              CONTACT
+          ========================= */}
 
           <div>
 
             <h3 className="text-xl font-semibold text-[#FFD77A] mb-5">
-              Contact Info
+              {t.contactInfo}
             </h3>
 
             <div className="space-y-4 text-[14px] text-[#F7EFE5]">
@@ -179,7 +198,7 @@ const Footer = () => {
                 <FaMapMarkerAlt className="text-[#FFD77A] mt-1 text-lg shrink-0" />
 
                 <p className="leading-7">
-                  Gram Rewas,Jaora,
+                  Gram Rewas, Jaora,
                   <br />
                   District Ratlam (M.P.)
                 </p>
@@ -190,7 +209,7 @@ const Footer = () => {
 
                 <FaPhoneAlt className="text-[#FFD77A] text-base shrink-0" />
 
-                <p>+91 XXXXX XXXXX</p>
+                <p>+91 91318 25546</p>
 
               </div>
 
@@ -198,9 +217,12 @@ const Footer = () => {
 
                 <FaEnvelope className="text-[#FFD77A] text-base shrink-0" />
 
-                <p className="break-all">
-                  info@shriramweldingworks.com
-                </p>
+                <a
+                  href="mailto:shriramrewas@gmail.com"
+                  className="break-all text-[#F7EFE5] hover:text-[#FFD77A] transition"
+                >
+                  shriramrewas@gmail.com
+                </a>
 
               </div>
 
@@ -209,9 +231,9 @@ const Footer = () => {
                 <FaClock className="text-[#FFD77A] mt-1 text-base shrink-0" />
 
                 <p>
-                  Mon – Sat
+                  {t.mondaySaturday}
                   <br />
-                  9:00 AM – 7:00 PM
+                  {t.timing}
                 </p>
 
               </div>
@@ -224,18 +246,20 @@ const Footer = () => {
 
       </div>
 
-      {/* Bottom */}
+      {/* =========================
+          BOTTOM
+      ========================= */}
 
       <div className="border-t border-[#A97548]">
 
         <div className="w-full mx-auto px-5 py-4 flex lg:flex-row flex-col justify-between items-center gap-3">
 
           <p className="text-[14px] text-[#F7EFE5] text-center">
-            © 2026 Shri Ram Welding Works. All Rights Reserved.
+            {t.rightsReserved}
           </p>
 
           <p className="text-[14px] text-[#F7EFE5] text-center">
-            Designed & Developed by{" "}
+            {t.designedDeveloped}{" "}
             <span className="font-semibold text-[#FFD77A]">
               Your Company
             </span>

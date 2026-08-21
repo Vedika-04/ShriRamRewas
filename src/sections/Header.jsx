@@ -182,7 +182,8 @@ const Header = () => {
 
             <div className="flex items-center gap-2 text-sm font-medium">
               <FaPhoneVolume />
-              <span>+91 98274 XXXXX</span>
+              
+              <span>+91 91318 25546</span>
             </div>
 
             {/* Location */}
@@ -196,7 +197,7 @@ const Header = () => {
 
             <div className="flex items-center gap-2 text-sm font-medium">
               <MdEmail />
-              <span>info@shriramweldingworks.com</span>
+              <span>shriramrewas@gmail.com</span>
             </div>
           </div>
         </motion.div>
